@@ -19,18 +19,18 @@ La partita termina quando il giocatore clicca su una bomba o quando raggiunge il
 possibile di numeri consentiti (ovvero quando ha rivelato tutte le celle che non sono bombe).
 Al termine della partita il software deve comunicare il punteggio, cioè il numero di volte 
 che l’utente ha cliccato su una cella che non era una bomba. */
-
-
+// CREO UNA VARIABILE CONTATORE CON VALORE 0
+let pointsCounter = 0;
+const bombArray = [];
 // quando l'utente preme il pulsante play si genera una griglia 
 const playButton = document.querySelector('#play-button');
 //console.log(playButton);
 playButton.addEventListener('click', function() {
-    // CREO UNA VARIABILE CONTATORE CON VALORE 0
-    let pointsCounter = 0;
-    console.log('score', pointsCounter);
+    
+    
     // IL COMPUTER DEVE GENERARE 16 NUMERI CASUALI: LE BOMBE
     //CREO ARRAY VUOTO, 
-    const bombArray = [];
+    
     
     //FINO A CHE ARRAY NON E' DI 16 elementi: CREO NUMERI RANDOM,
     while (bombArray.length < 16) {
@@ -85,14 +85,21 @@ playButton.addEventListener('click', function() {
 function generateSquare(number) {
     const newSquare = document.createElement('div');
     newSquare.classList.add('square');
-    newSquare.innerHTML = `<span>${number}</span>`;
+    newSquare.innerHTML = `${number}`;
 
     // gestione del click su ogni quadrato
     // Quando il quadratino viene cliccato si colora di azzurro e
     // viene emesso un messaggio in console con il numero del quadratino cliccato
     newSquare.addEventListener('click', function(){
-        this.classList.add('blue');
-        console.log(number);
+        if(bombArray.includes(parseInt(this.innerHTML))) {
+            this.classList.add('red');
+            
+        } else{
+            this.classList.add('blue');
+            pointsCounter++;
+            console.log('score',pointsCounter);
+        }
+        
     });
 
     return newSquare;
