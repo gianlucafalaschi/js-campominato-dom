@@ -93,6 +93,7 @@ function generateSquare(number) {
     newSquare.addEventListener('click', function(){
         if(bombArray.includes(parseInt(this.innerHTML))) {
             this.classList.add('red');
+            alert(`Game over. Il tuo punteggio e': ${pointsCounter}`);
             
         } else{
             this.classList.add('blue');
