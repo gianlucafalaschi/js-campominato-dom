@@ -1,10 +1,14 @@
-/* L'utente clicca su un bottone che genererà una griglia di gioco quadrata.
+
+
+/* PARTE 1
+ L'utente clicca su un bottone che genererà una griglia di gioco quadrata.
 Ogni cella ha un numero progressivo, da 1 a 100.
 Ci saranno quindi 10 caselle per ognuna delle 10 righe.
 Quando l'utente clicca su ogni cella, la cella cliccata si colora di 
 azzurro ed emetto un messaggio in console con il numero della cella cliccata. */
 
-/* Il computer deve generare 16 numeri casuali nello stesso range della difficoltà prescelta:
+/* PARTE 2
+ Il computer deve generare 16 numeri casuali nello stesso range della difficoltà prescelta:
  le bombe. Attenzione: nella stessa cella può essere posizionata al massimo una bomba,
   perciò nell’array delle bombe non potranno esserci due numeri uguali.
 In seguito l'utente clicca su una cella: se il numero è presente nella lista
@@ -21,6 +25,10 @@ che l’utente ha cliccato su una cella che non era una bomba. */
 const playButton = document.querySelector('#play-button');
 //console.log(playButton);
 playButton.addEventListener('click', function() {
+    // IL COMPUTER DEVE GENERARE 16 NUMERI CASUALI: LE BOMBE
+    //CREO ARRAY VUOTO, 
+    //FINO A CHE ARRAY NON E' DI 16 elementi: CREO NUMERI RANDOM,
+    // SE IL NUMERO RANDOM NON E' PRESENTE NELL'ARRAY LO AGGIUNGO NELL'ARRAY 
     // la griglia diventa visibile aggiungendo una classe
     const mainGrid = document.querySelector('#grid');
     mainGrid.classList.add('active');
@@ -37,10 +45,18 @@ playButton.addEventListener('click', function() {
     
 });
 
-
-// Quando il quadratino viene cliccato si colora di azzurro e
+// CREO UNA VARIABILE CONTATORE CON VALORE 0
+// Quando il quadratino viene cliccato:
+// SE IL NUMERO DEL QUADRATO NON E' PRESENTE NELL'ARRAY
+// il quadrato si colora di azzurro e
 // viene emesso un messaggio in console con il numero del quadratino cliccato
+// IL CONTATORE DEI PUNTI AUMENTA DI +1
+// ALTRIMENTI IL NUMERO DEL QUADRATINO CLICCATO E' PRESENTE NELL'ARRAY HO TROVATO UNA BOMBA
+// IL QUADRATO SI COLORA DI ROSSO E LA PARTITA TERMINA
+// VIENE MOSTRATO IL NUMERO DEI PUNTI DEL CONTATORE
 
+// SE TUTTE LE CELLE CHE NON SONO BOMBE VENGONO CLICCATE OPPURE UNA BOMBA VIENE CLICCATA,
+// VIENE MOSTRATO UN MESSAGGIO CON IL NUMERO DEI PUNTI DEL CONTATORE 
 
 
 // FUNCTIONS
