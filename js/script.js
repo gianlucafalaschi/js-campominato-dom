@@ -28,14 +28,19 @@ playButton.addEventListener('click', function() {
     // IL COMPUTER DEVE GENERARE 16 NUMERI CASUALI: LE BOMBE
     //CREO ARRAY VUOTO, 
     const bombArray = [];
-    console.log(bombArray);
+    
     //FINO A CHE ARRAY NON E' DI 16 elementi: CREO NUMERI RANDOM,
     while (bombArray.length < 16) {
         let randomNumber = getRndInteger(1, 100);
-        bombArray.push(randomNumber);
-        console.log(bombArray);
+        // SE IL NUMERO RANDOM NON E' PRESENTE NELL'ARRAY LO AGGIUNGO NELL'ARRAY 
+        let randomNumberFound = bombArray.includes(randomNumber);
+        if(randomNumberFound === false){
+            bombArray.push(randomNumber);
+            console.log(bombArray);
+        }
+        
     }
-    // SE IL NUMERO RANDOM NON E' PRESENTE NELL'ARRAY LO AGGIUNGO NELL'ARRAY 
+    
     // la griglia diventa visibile aggiungendo una classe
     const mainGrid = document.querySelector('#grid');
     mainGrid.classList.add('active');
