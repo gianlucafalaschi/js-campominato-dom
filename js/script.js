@@ -25,6 +25,9 @@ che l’utente ha cliccato su una cella che non era una bomba. */
 const playButton = document.querySelector('#play-button');
 //console.log(playButton);
 playButton.addEventListener('click', function() {
+    // CREO UNA VARIABILE CONTATORE CON VALORE 0
+    let pointsCounter = 0;
+    console.log('score', pointsCounter);
     // IL COMPUTER DEVE GENERARE 16 NUMERI CASUALI: LE BOMBE
     //CREO ARRAY VUOTO, 
     const bombArray = [];
@@ -59,7 +62,7 @@ playButton.addEventListener('click', function() {
 
 
 
-// CREO UNA VARIABILE CONTATORE CON VALORE 0
+
 // Quando il quadratino viene cliccato:
 // SE IL NUMERO DEL QUADRATO NON E' PRESENTE NELL'ARRAY
 // il quadrato si colora di azzurro e
