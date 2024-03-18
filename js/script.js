@@ -95,7 +95,14 @@ function generateSquare(number) {
         if(bombArray.includes(parseInt(this.innerHTML))) {
             this.classList.add('red');
             alert(`Game over. Il tuo punteggio e': ${pointsCounter}`);
-            mainGrid.classList.remove('active');
+            
+            //execute this line after 2 seconds 
+            
+            setTimeout(() => {
+                mainGrid.classList.remove('active');
+                //mainGrid.innerHTML = ''; 
+            },2000);
+            
             
         } else{
             this.classList.add('blue');
