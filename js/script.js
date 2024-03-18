@@ -20,14 +20,17 @@ possibile di numeri consentiti (ovvero quando ha rivelato tutte le celle che non
 Al termine della partita il software deve comunicare il punteggio, cioè il numero di volte 
 che l’utente ha cliccato su una cella che non era una bomba. */
 
-
+/* 
 // quando l'utente preme il pulsante play si genera una griglia 
 const playButton = document.querySelector('#play-button');
 //console.log(playButton);
 playButton.addEventListener('click', function() {
     // IL COMPUTER DEVE GENERARE 16 NUMERI CASUALI: LE BOMBE
     //CREO ARRAY VUOTO, 
+    const bombArray = [];
+    console.log(bombArray);
     //FINO A CHE ARRAY NON E' DI 16 elementi: CREO NUMERI RANDOM,
+
     // SE IL NUMERO RANDOM NON E' PRESENTE NELL'ARRAY LO AGGIUNGO NELL'ARRAY 
     // la griglia diventa visibile aggiungendo una classe
     const mainGrid = document.querySelector('#grid');
@@ -43,7 +46,11 @@ playButton.addEventListener('click', function() {
         mainGrid.append(newSquare);
     }
     
-});
+}); */
+
+let randomNumber = getRndInteger(1, 100);
+alert(randomNumber);
+
 
 // CREO UNA VARIABILE CONTATORE CON VALORE 0
 // Quando il quadratino viene cliccato:
@@ -82,3 +89,10 @@ function generateSquare(number) {
     
 }
 
+// funzione che crea numeri casuali
+// min -> integer che rappresenta il valore minimo del numero casuale
+// max -> integer che rappresenta il valore massimo del numeri casuale
+//  return :  un integer casuale di valore compreso tra min e max
+function getRndInteger(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) ) + min;
+  }
