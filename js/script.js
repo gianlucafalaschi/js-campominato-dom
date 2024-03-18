@@ -38,7 +38,6 @@ playButton.addEventListener('click', function() {
             bombArray.push(randomNumber);
             console.log(bombArray);
         }
-        
     }
     
     // la griglia diventa visibile aggiungendo una classe
