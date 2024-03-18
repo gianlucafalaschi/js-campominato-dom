@@ -1,0 +1,86 @@
+/*---------
+   RESET
+---------*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*---------
+   BUTTONS
+---------*/
+.btn {
+    padding: 2px 20px;
+}
+
+.btn-head {
+    border: 1px solid gray;
+    border-radius: 5px;
+    margin-left: auto;
+
+}
+
+/*---------
+   IMAGES
+---------*/
+img {
+    width: 100%;
+}
+
+header {
+    background-color: pink;
+    display: flex;
+    align-items: center;
+    padding: 15px 10px;
+    gap: 15px;
+}
+
+.logo {
+    width: 5%;
+}
+
+/*---------
+   MAIN
+---------*/
+main {
+    background-color:#7FFFD4;
+    padding: 50px;
+}
+
+#grid {
+    width: 600px ;
+    height: 600px;
+    margin: 0 auto;
+    display: none;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+
+#grid.active {
+    display: flex;
+  
+}
+
+.square {
+    width: calc(100% / 10);
+    height: calc(100% /10);
+    border: 2px solid black;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.square.blue {
+    background-color: azure;
+}
+
+/*---------
+   FOOTER
+---------*/
+
+footer {
+    padding: 15px 10px;
+}
