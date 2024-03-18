@@ -20,6 +20,7 @@ possibile di numeri consentiti (ovvero quando ha rivelato tutte le celle che non
 Al termine della partita il software deve comunicare il punteggio, cioè il numero di volte 
 che l’utente ha cliccato su una cella che non era una bomba. */
 // CREO UNA VARIABILE CONTATORE CON VALORE 0
+let mainGrid;
 let pointsCounter = 0;
 const bombArray = [];
 // quando l'utente preme il pulsante play si genera una griglia 
@@ -44,7 +45,7 @@ playButton.addEventListener('click', function() {
     }
     
     // la griglia diventa visibile aggiungendo una classe
-    const mainGrid = document.querySelector('#grid');
+    mainGrid = document.querySelector('#grid');
     mainGrid.classList.add('active');
     // svuoto la griglia quando viene premuto il bottone play
     mainGrid.innerHTML = ''; 
@@ -94,6 +95,7 @@ function generateSquare(number) {
         if(bombArray.includes(parseInt(this.innerHTML))) {
             this.classList.add('red');
             alert(`Game over. Il tuo punteggio e': ${pointsCounter}`);
+            mainGrid.classList.remove('active');
             
         } else{
             this.classList.add('blue');
