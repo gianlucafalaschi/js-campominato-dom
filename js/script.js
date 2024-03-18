@@ -20,7 +20,7 @@ possibile di numeri consentiti (ovvero quando ha rivelato tutte le celle che non
 Al termine della partita il software deve comunicare il punteggio, cioè il numero di volte 
 che l’utente ha cliccato su una cella che non era una bomba. */
 
-/* 
+
 // quando l'utente preme il pulsante play si genera una griglia 
 const playButton = document.querySelector('#play-button');
 //console.log(playButton);
@@ -30,7 +30,11 @@ playButton.addEventListener('click', function() {
     const bombArray = [];
     console.log(bombArray);
     //FINO A CHE ARRAY NON E' DI 16 elementi: CREO NUMERI RANDOM,
-
+    while (bombArray.length < 16) {
+        let randomNumber = getRndInteger(1, 100);
+        bombArray.push(randomNumber);
+        console.log(bombArray);
+    }
     // SE IL NUMERO RANDOM NON E' PRESENTE NELL'ARRAY LO AGGIUNGO NELL'ARRAY 
     // la griglia diventa visibile aggiungendo una classe
     const mainGrid = document.querySelector('#grid');
@@ -46,10 +50,9 @@ playButton.addEventListener('click', function() {
         mainGrid.append(newSquare);
     }
     
-}); */
+}); 
 
-let randomNumber = getRndInteger(1, 100);
-alert(randomNumber);
+
 
 
 // CREO UNA VARIABILE CONTATORE CON VALORE 0
